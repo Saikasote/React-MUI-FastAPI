@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Booking from "./components/Booking";
+import FlightStatus from "./components/FlightStatus";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import SearchFlight from "./components/SearchFlight";
+import "./App.css";
+import { Box } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./components/theme";
+import Corousel from "./components/Corousel";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ThemeProvider theme={theme}>
+        <Navbar />
+        <Box>
+          <Booking />
+          <FlightStatus />
+          <SearchFlight />
+          <Corousel />
+        </Box>
+        <Footer />
+      </ThemeProvider>
     </div>
   );
 }
